@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home page of data science practice</title>
+    <link rel="shortcut icon" type="image/png" href="/static/images/icon.png"/>
+    <!--  STYLES   -->
+    <link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/rastikerdar/vazir-font/v21.2.0/dist/font-face.css">
+
+    <link rel="stylesheet" href="/static/css/w3.css">
+    <link rel="stylesheet" href="/static/css/style.css}">
+
+
+</head>
+<body>
+<header>
+    <div class="w3-container w3-teal">
+        <h1>Home page</h1>
+    </div>
+</header>
+<main class="w3-padding-48">
+    <div class="w3-container w3-padding-48">
+       <div class="w3-row-padding w3-margin-top">
+	   
+			{% for name in dataSets : %}
+                    <div class="w3-third w3-margin-top">
+					   <div class="w3-card pad-box">
+						   <img src="static/images/{{name}}.png" style="width:100%">
+						   <div class="w3-container">
+							   <h4> {{name}} data set</h4>
+                               <ul class="w3-ul">
+                                   <li><a href="{{ url_for('showTable', dataSetName=name) }}"> open {{name}} dataset table </a></li>
+                                   <li><a href="{{ url_for('showPlot', dataSetName=name) }}"> open {{name}} dataset plot </a></li>
+                                   <li>Adam</li>
+                               </ul>
+
+						   </div>
+					   </div>
+				   </div>
+            {% endfor %}             
+					
+           
+
+       </div>
+    </div>
+
+</main>
+<footer class="w3-container w3-teal">
+    <h5>project : data science practices </h5>
+    <p> amin sharifi @ github.com/bigmpc/</p>
+</footer>
+
+</body>
+</html>

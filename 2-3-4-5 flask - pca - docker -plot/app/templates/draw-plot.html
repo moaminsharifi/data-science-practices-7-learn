@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>show data set of {{name}}</title>
+    <link rel="shortcut icon" type="image/png" href="/static/images/icon.png"/>
+    <!--  STYLES   -->
+    <link type="text/css" rel="stylesheet"
+          href="https://cdn.rawgit.com/rastikerdar/vazir-font/v21.2.0/dist/font-face.css">
+
+    <link rel="stylesheet" href="/static/css/w3.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+
+
+</head>
+<body>
+<header>
+    <div class="w3-row menu">
+        <ul>
+            <li>  <a href="{{url_for('home')}}" >home</a></li>
+
+            <li>  <a href="https://github.com/bigmpc/data-science-flask-docker-pandas-pca" >github</a></li>
+        </ul>
+
+
+    </div>
+    </div>
+    <div class="w3-container w3-teal">
+
+        <h1>data set {{name}}.csv</h1>
+    </div>
+</header>
+<main class="w3-padding-48">
+    <div class="w3-container w3-padding-48">
+        <div class="w3-row-padding w3-margin-top">
+            {% for plot in plots : %}
+
+
+            <div class="w3-col m3 l6 ">
+                <div class="w3-card pad-box w3-margin-top ">
+
+                    <h2> {{plot.title}}    <span class="plot-type">{{plot.type}}</span> </h2>
+
+                    <img src="/static/images/{{name}}/{{plot.fileName}}" style="width:100%">
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+    </div>
+
+</main>
+<footer class="w3-container w3-teal">
+    <h5>project : data science practices </h5>
+    <p> amin sharifi @ <a href="https://github.com/bigmpc/data-science-flask-docker-pandas-pca"></a></p>
+</footer>
+
+</body>
+</html>

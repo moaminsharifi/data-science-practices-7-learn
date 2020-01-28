@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>home page of data science practice</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/w3.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='images/icon.png') }}" />
+
+</head>
+<body>
+<header>
+    <div class="w3-container w3-teal">
+        <h1>Home page</h1>
+    </div>
+</header>
+<main class="w3-padding-48">
+    <div class="w3-container w3-padding-48">
+        <div class="w3-row-padding w3-margin-top">
+
+
+            <form action="/submit" method=post enctype=multipart/form-data >
+                <label>A CSV file</label>
+                <input type=file name=afile>
+                <br>
+                <br>
+                <label>B CSV file</label>
+                <input type=file name=bfile>
+                <input type=submit value=Upload>
+            </form>
+
+
+        </div>
+
+        <div class="w3-row-padding w3-margin-top" style=" direction: rtl; ">
+            {% for dt in data : %}
+                <div class="w3-container">
+                    <h4>  نتیجه بررسی</h4>
+                    <ul class="w3-ul">
+                        <li>z_score : {{dt.z_score}}</li>
+                        <li>نتیجه : {{dt.z_text}}</li>
+                        <li>p_value : {{dt.p_value}}</li>
+                        <li>نتیجه : {{dt.p_text}}</li>
+
+                    </ul>
+
+                </div>
+            {% endfor %}
+
+
+        </div>
+
+
+    </div>
+
+</main>
+<footer class="w3-container w3-teal">
+    <h5>project : data science practices </h5>
+    <p> amin sharifi @ github.com/bigmpc/</p>
+</footer>
+</body>
+</html>

@@ -10,3 +10,5 @@
 [install packge for z test](https://www.statsmodels.org/stable/install.html)
 
 [Statistics How To](https://www.statisticshowto.datasciencecentral.com/z-alpha2-za2/)
+
+[Deploying a scalable Flask app using Gunicorn and Nginx, in Docker](https://medium.com/@kmmanoj/deploying-a-scalable-flask-app-using-gunicorn-and-nginx-in-docker-part-1-3344f13c9649)

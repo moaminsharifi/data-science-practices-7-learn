@@ -36,10 +36,10 @@ def drawPlot(dataSetName='titanic'):
                 plt.close(figure)
 
             plots.append({
-                'title':'historic  of ' + column,
-                'type':'hist',
-                'fileName': nameOfPlotFile
-            })
+            'title':'hist  of ' + column,
+            'type':'hist',
+            'fileName': nameOfPlotFile
+        })
     # relationship between cols
 
 

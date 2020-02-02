@@ -23,7 +23,7 @@ def drawPlot(dataSetName='flow'):
     for column in csvDataFrame.columns:
         types.append(column)
         nameOfPlotFile = 'hist-'+column+'.png'
-        if not os.path.exists('./app/static/images/'+dataSetName+'/pca-'+column+'.png'):
+        if not os.path.exists('./app/static/images/'+dataSetName+'/hist-'+column+'.png'):
             data = csvDataFrame[column]
             figure = plt.figure(figsize=(6, 4))
             data.plot.hist(title=  dataSetName + ' ' + column + ' hist Plot',density=True,)
@@ -31,8 +31,8 @@ def drawPlot(dataSetName='flow'):
             plt.close(figure)
 
         plots.append({
-            'title':'Pca  of ' + column,
-            'type':'pca',
+            'title':'historic  of ' + column,
+            'type':'hist',
             'fileName': nameOfPlotFile
         })
     # relationship between cols

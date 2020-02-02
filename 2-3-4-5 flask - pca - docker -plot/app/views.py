@@ -7,6 +7,7 @@ from app.components.plot.airbase import drawPlot as airbasePlot
 from app.components.plot.flow import drawPlot as flowPlot
 from app.components.plot.melb import drawPlot as melbPlot
 from app.components.plot.titanic import drawPlot as titanicPlot
+from app.components.pca.titanic import drawPca as titanicPca
 dataSets = ['airbase', 'flow', 'melb', 'titanic']
 
 
@@ -40,8 +41,10 @@ def showTable(dataSetName):
 
 @app.route('/plot/<dataSetName>')
 def showPlot(dataSetName):
+    
     if dataSetName in dataSets:
         plots = []
+        pca = False
         if dataSetName == dataSets[0]:
             plots = airbasePlot()
         elif dataSetName == dataSets[1]:
@@ -50,8 +53,9 @@ def showPlot(dataSetName):
             plots = melbPlot()
         elif dataSetName == dataSets[3]:
             plots = titanicPlot()
-        print(plots)
-        return render_template('draw-plot.html', plots=plots, name=dataSetName)
+            pca = titanicPca()
+        print(pca)
+        return render_template('draw-plot.html', plots=plots, name=dataSetName , pca=pca)
     else:
         return render_template('404.html', name=dataSetName, dataSets=dataSets, code=404)
 

@@ -1,7 +1,11 @@
 import pandas as pd
 import os
 import matplotlib.pyplot as plt
-
+from mpl_toolkits.mplot3d import Axes3D
+from sklearn.decomposition import PCA
+from sklearn import preprocessing
+# import tensorflow as tf
+import seaborn as sns
 
 def drawPlot(dataSetName='airbase'):
     """ open and get some condion of data set
@@ -23,7 +27,7 @@ def drawPlot(dataSetName='airbase'):
     for column in csvDataFrame.columns:
         types.append(column)
         nameOfPlotFile = 'hist-'+column+'.png'
-        if not os.path.exists('./app/static/images/'+dataSetName+'/hist-'+column+'.png'):
+        if not os.path.exists('./app/static/images/'+dataSetName+'/pca-'+column+'.png'):
             data = csvDataFrame[column]
             figure = plt.figure(figsize=(6, 4))
             data.plot.hist(title=  dataSetName + ' ' + column + ' hist Plot',density=True,)
@@ -31,9 +35,9 @@ def drawPlot(dataSetName='airbase'):
             plt.close(figure)
 
         plots.append({
-                'title':'historic  of ' + column,
-                'type':'hist',
-                'fileName': nameOfPlotFile
+            'title':'Pca  of ' + column,
+            'type':'pca',
+            'fileName': nameOfPlotFile
         })
     # relationship between cols
 

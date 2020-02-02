@@ -22,17 +22,17 @@ def drawPlot(dataSetName='melb'):
     # create Hist From All Cols
     for column in csvDataFrame.columns:
         types.append(column)
-        nameOfPlotFile = 'hist-'+column+'.png'
-        if not os.path.exists('./app/static/images/'+dataSetName+'/hist-'+column+'.png'):
+        nameOfPlotFile = 'pca-'+column+'.png'
+        if not os.path.exists('./app/static/images/'+dataSetName+'/pca-'+column+'.png'):
             data = csvDataFrame[column]
             figure = plt.figure(figsize=(6, 4))
-            data.plot.hist(title=  dataSetName + ' ' + column + ' hist Plot',density=True,)
+            data.plot.hist(title=  dataSetName + ' ' + column + ' pca',density=True,)
             plt.savefig('./app/static/images/'+ dataSetName +'/' + nameOfPlotFile )
             plt.close(figure)
 
         plots.append({
-            'title':'historic  of ' + column,
-            'type':'hist',
+            'title':'Pca  of ' + column,
+            'type':'pca',
             'fileName': nameOfPlotFile
         })
     # relationship between cols

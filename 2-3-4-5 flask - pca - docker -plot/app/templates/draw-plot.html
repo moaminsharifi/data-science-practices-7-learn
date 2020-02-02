@@ -45,7 +45,24 @@
                 </div>
             </div>
 
+           
+
             {% endfor %}
+
+             {% if name == 'titanic' %}
+            
+                
+            <div class="w3-col m3 l6 ">
+                <div class="w3-card pad-box w3-margin-top ">
+
+                    <h2> PCA    <span class="plot-type">PCA</span> </h2>
+
+                    <img src="/static/images/{{name}}/pca.png" style="width:100%">
+                </div>
+            </div>
+
+            {% endif %}
+
         </div>
     </div>
 

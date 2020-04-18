@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>404</title>
+   <link rel="shortcut icon" type="image/png" href="/static/images/icon.png"/>
+    <!--  STYLES   -->
+    <link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/rastikerdar/vazir-font/v21.2.0/dist/font-face.css">
+
+    <link rel="stylesheet" href="/static/css/w3.css">
+    <link rel="stylesheet" href="/static/css/style.css}">
+
+
+
+</head>
+<body>
+<div class="w3-container">
+  <h1>404</h1>
+</div>
+
+
+<div class="w3-container">
+  <p>can not find page /draw/{{name}}</p>
+  <p>there some available datasets</p>
+  <ul>
+  	{% for name in dataSets : %}
+
+							   <li><a href="{{ url_for('showPlots', dataSetName=name  ) }}">  open {{name}} data set</a>  </li>
+
+            {% endfor %}         
+			
+  
+  
+
+  </ul>
+  
+</div>
+
+</body>
+</html>

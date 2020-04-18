@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>show data set of {{name}}</title>
+    <link rel="shortcut icon" type="image/png" href="/static/images/icon.png"/>
+    <!--  STYLES   -->
+    <link type="text/css" rel="stylesheet"
+          href="https://cdn.rawgit.com/rastikerdar/vazir-font/v21.2.0/dist/font-face.css">
+
+    <link rel="stylesheet" href="/static/css/w3.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+
+
+</head>
+<body>
+<header>
+    <div class="w3-row menu">
+        <ul>
+            <li>  <a href="{{url_for('home')}}" >home</a></li>
+
+            <li>  <a href="https://github.com/bigmpc/data-science-flask-docker-pandas-pca" >github</a></li>
+        </ul>
+
+
+    </div>
+    </div>
+    <div class="w3-container w3-teal">
+
+        <h1>data set {{name}}.csv</h1>
+    </div>
+</header>
+<main class="w3-padding-48">
+    <div class="w3-container w3-padding-48">
+
+			{% for table in tables : %}
+
+		<div class="w3-row-padding w3-margin-top">
+            <h2> {{table.title}} </h2>
+            <table class="w3-table w3-bordered w3-striped w3-border test w3-hoverable">
+
+                <thead>
+                <tr class="w3-green">
+                    {% for column in table.dataset.columns : %}
+                    <th>{{column}}</th>
+                    {% endfor %}
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    {% for row in table.dataset.values : %}
+                <tr>
+                    {% for singleValueInRow in row: %}
+                    <th>{{ singleValueInRow }}</th>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+                </tr>
+
+
+                </tbody>
+            </table>
+		</div>
+			{% endfor %}
+
+    </div>
+
+</main>
+<footer class="w3-container w3-teal">
+    <h5>project : data science practices </h5>
+    <p> amin sharifi @ <a href="https://github.com/bigmpc/data-science-flask-docker-pandas-pca"></a></p>
+</footer>
+
+</body>
+</html>

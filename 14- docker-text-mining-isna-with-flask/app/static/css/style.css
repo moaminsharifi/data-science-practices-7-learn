@@ -1,0 +1,48 @@
+﻿body,html{
+	font-family: Vazir, Tahoma, "DejaVu Sans", helvetica, arial, freesans, sans-serif;
+}
+body{
+      background-color: #f7f8f9;
+      color: #000;
+      font-size: 14px;
+
+      line-height: 1.7;
+      
+}
+.pad-box{
+    padding: 16px;
+    border-radius: 5px;
+}
+.plot-type{
+    background: #3498db;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    border-radius: 7px;
+    padding: 5px 10px;
+    color: #fff;
+    font-size: 24px;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.menu ul li {
+  float: left;
+}
+
+.menu ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.menu ul li a:hover {
+  background-color: #111;
+}
